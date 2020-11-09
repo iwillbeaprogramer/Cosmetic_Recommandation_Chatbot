@@ -1,0 +1,51 @@
+doctype html
+html
+
+	// head
+	include ./include/head.jade
+
+	// body
+	body.overlay-wrapped
+		.mist-overlay
+		section.main-section
+			#mistify
+				div.mistify__slide
+					a(href="page.html").mistify__slide-content.mist-link
+						p.mistify__slide-description Hello Everyone
+						h1.mistify__slide-title Hallo, mein Name ist Ralf. Ich bin Coach für herausfordernde Lebensumstände. Sind Sie in einer und stimmen den Aussagen unten zu?
+						p.mistify__slide-timestamp 01 / 04
+					img.mistify__slide-background(src="img/1.jpg" alt="bg")
+				div.mistify__slide
+					a(href="page.html").mistify__slide-content.mist-link
+						p.mistify__slide-description 
+						h1.mistify__slide-title "Die" Realität gibt es nicht.
+						p.mistify__slide-timestamp 02 / 04
+					img.mistify__slide-background(src="img/2.jpg" alt="bg")
+				div.mistify__slide
+					a(href="page.html").mistify__slide-content.mist-link
+						p.mistify__slide-description Mein Coaching Ansatz ist der sokratische Dialog
+						h1.mistify__slide-title Lieber Philosophie als esoterisches Geschwafel.
+						p.mistify__slide-timestamp 03 / 04
+					img.mistify__slide-background(src="img/3.jpg" alt="bg")
+				div.mistify__slide
+					a(href="page.html").mistify__slide-content.mist-link
+						p.mistify__slide-description 
+						h1.mistify__slide-title Erfolg hat einen abnehmenden Grenznutzen.
+						p.mistify__slide-timestamp 04 / 04
+					img.mistify__slide-background(src="img/4.jpg" alt="bg")
+
+			include ./include/menu.jade
+
+			ul.main-section__links
+				li
+					a(href="#")
+						i(class="fa fa-twitter" aria-hidden="true")
+				li
+					a(href="#")
+						i(class="fa fa-dribbble" aria-hidden="true")
+				li
+					a(href="#")
+						i(class="fa fa-paper-plane-o" aria-hidden="true")
+
+		// scripts
+		include ./include/scripts.jade

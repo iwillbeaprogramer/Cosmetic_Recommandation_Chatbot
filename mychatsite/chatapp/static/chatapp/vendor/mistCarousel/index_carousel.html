@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<!-- head-->
+<head>
+<!-- meta-->
+<title>jQuery Mist Carousel Plugin Example</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Mist Carousel">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- stylesheets-->
+<link rel="stylesheet" href="css/project.css">
+<link rel="stylesheet" href="css/mistCarousel.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  /* 오렌지 계열   색상 : #f4511e */
+  /* 보라색 계열   색상 : #673ab7 */
+ /*
+   p { font-size: 24px; }
+  .ga { font-family: 'Gaegu', cursive; }
+  .hi { font-family: 'Hi Melody', cursive; }
+  .ju { font-family: 'Jua', sans-serif; }
+  .go { font-family: 'Gothic A1', sans-serif; }
+  .na { font-family: 'Nanum Gothic', sans-serif;
+ */
+ 
+  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  .jumbotron {
+      background-color: #673ab7;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  .logo-small {
+      color: #673ab7;
+      font-size: 50px;
+  }
+  .logo {
+      color: #673ab7;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #673ab7;
+  }
+  .carousel-indicators li {
+      border-color: #673ab7;
+  }
+  .carousel-indicators li.active {
+      background-color: #673ab7;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+      font-size: 14px;
+  }
+ /*----*/
+	 .chat {
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+	.chat li {
+	  margin-bottom: 10px;
+	  padding-bottom: 5px;
+	  border-bottom: 1px dotted #999999;
+	}
+	.chat li.left .chat-body {
+	  margin-left: 60px;
+	}
+	.chat li.right .chat-body {
+	  margin-right: 60px;
+	}
+	.chat li .chat-body p {
+	  margin: 0;
+	}
+	.chat-panel .panel-body {
+	  height: 350px;
+	  overflow-y: scroll;
+	}
+ /*----*/
+  .panel {
+      border: 1px solid #673ab7; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #673ab7;
+      background-color: #fff !important;
+      color: #673ab7;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #673ab7 !important;
+      padding: 10px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+ 
+  .panel-footer .btn {
+/* 버튼 좌우정열이 안되는 원인 제공으로 코멘트 처리
+      margin: 15px 0;
+*/
+      background-color: #673ab7;
+      color: #fff;
+  }
+
+  .navbar {
+      margin-bottom: 0;
+      background-color: #673ab7;
+      /* popup 전체화면을 사용시 z-index 9999보다 큰값 설정 필요*/
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #673ab7 !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #673ab7;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  
+/*
+
+*/
+
+
+.btn__trigger {
+  transition: box-shadow 300ms ease-in-out;
+  position: fixed;
+  z-index: 10;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: block;
+  border-radius: 50px;
+}
+
+.btn__trigger--views {
+  width: 5rem;
+  height: 5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #673ab7;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 3;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.btn__trigger--views:hover { box-shadow: 0 14px 10px rgba(0, 0, 0, 0.24), 0 10px 10px rgba(0, 0, 0, 0.24); }
+
+.my-nav {
+  position: fixed;
+  opacity: 0;
+}
+
+.my-nav.reveal {
+  visibility: visible;
+  opacity: 1;
+}
+
+.my-nav.reveal:after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  content: "";
+  background-color: rgba(42, 196, 159, 0.7);
+}
+
+.my-nav--list {
+  visibility: hidden;
+  bottom: 6.5rem;
+  right: 1.75rem;
+  text-align: right;
+}
+
+.my-nav__item {
+  transition: opacity 150ms ease-in-out;
+  display: block;
+  font-size: 0.90rem;
+  opacity: 0;
+}
+
+.my-nav__item.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.my-nav__link {
+  transition: background-color 150ms ease-in-out;
+  display: inline-block;
+  width: auto;
+  margin: 1rem 0;
+  padding: 0.25rem 0.5rem;
+  box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+  color: #fff;
+}
+
+.my-nav__link--template:hover {
+  background-color: #ffc946;
+  color: #fff;
+}
+
+.my-nav__link--new {
+  transition: box-shadow 300ms ease-in-out;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #87c442;
+  color: #fff;
+}
+
+.my-nav__link--new:hover { box-shadow: 0 14px 10px rgba(0, 0, 0, 0.24), 0 10px 10px rgba(0, 0, 0, 0.24); }
+
+.my-nav__link:last-child { margin-bottom: 0; }
+  
+
+/*
+
+*/  
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }
+
+</style>
+<!-- scripts-->
+</head>
+<!-- body-->
+<body>
+<div class="mist-overlay"></div>
+  <div id="mistify">
+    <div class="mistify__slide"><a class="mistify__slide-content mist-link" href="">
+      <p class="mistify__slide-description">정보 전달의 정확성이 확보된 고객 접점관리 홈페이지 챗봇서비스</p>
+      <h1 class="mistify__slide-title">홈페이지 방문 고객의 잛고 간결한 질문에 대해 정확하고 핵심적인 답변이 가능한 접점관리 서비스는?</h1>
+      <p class="mistify__slide-timestamp">01 / 05</p>
+      </a><img class="mistify__slide-background" src="img/1.jpg" alt="bg"></div>
+    <div class="mistify__slide"><a class="mistify__slide-content mist-link" href="page.html">
+      <p class="mistify__slide-description">고객의 제품 서비스 정보요구 편의성 제공 홈페이지 챗봇서비스</p>
+      <h1 class="mistify__slide-title">홈페이지의 고객 문의 게시글이나 댓글에 한참만에 대응하는 방식 말고 직접 실시간 질의응답 서비스는?</h1>
+      <p class="mistify__slide-timestamp">02 / 05</p>
+      </a><img class="mistify__slide-background" src="img/2.jpg" alt="bg"></div>
+    <div class="mistify__slide"><a class="mistify__slide-content mist-link" href="page.html">
+      <p class="mistify__slide-description">고객의 제품 서비스 정보요구에 민첩한 홈페이지 챗봇서비스</p>
+      <h1 class="mistify__slide-title">고객 인내심 테스트 ARS(Automatic Response System)의 번호 안내 서비스를 대체 할 실시간 정보 확인 서비스는?</h1>
+      <p class="mistify__slide-timestamp">03 / 05</p>
+      </a><img class="mistify__slide-background" src="img/3.jpg" alt="bg"></div>
+    <div class="mistify__slide"><a class="mistify__slide-content mist-link" href="page.html">
+      <p class="mistify__slide-description">다양한 채널을 통한 실시간 홈페이지 챗봇서비스</p>
+      <h1 class="mistify__slide-title">채팅은 카카오톡과 라인등 메신저을 통해서만 가능하다는 편견을 버리고 홈페이지에서도 경험해 보세요</h1>
+      <p class="mistify__slide-timestamp">04 / 05</p>
+      </a><img class="mistify__slide-background" src="img/4.jpg" alt="bg"></div>
+    <div class="mistify__slide"><a class="mistify__slide-content mist-link" href="page.html">
+      <p class="mistify__slide-description">고객에게 향상된 경험을 재공하는 홈페이지 챗봇서비스</p>
+      <h1 class="mistify__slide-title">기존 홈페이지에 채팅 서비스 추가를 통해 고객의 소리(VOC:Voice of customer)를 수집하여 제품 서비스를 개선해 보세요</h1>
+      <p class="mistify__slide-timestamp">05 / 05</p>
+      </a><img class="mistify__slide-background" src="img/5.jpg" alt="bg"></div>
+  </div>
+<!-- scripts--> 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/mistCarousel.js"></script> 
+<script src="js/main.js"></script>
+
+</body>
+</html>

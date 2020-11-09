@@ -1,0 +1,353 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>{% block title %}ARKWITH SITE{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- W3.CSS Template -->
+  <link rel="stylesheet" href='{% static "chatapp/css/font-awesome.min.css" %}'>
+  <link rel="stylesheet" href='{% static "chatapp/css/css.css" %}'>
+  <link rel="stylesheet" href='{% static "chatapp/css/w3.css" %}'>
+
+  <!-- iziModal -->
+  <link href='{% static "chatapp/vendor/iziModal/css/iziModal.min.css" %}' rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="{% static 'chatapp/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+  <!-- Korean Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Gaegu|Gothic+A1|Hi+Melody|Jua|Nanum+Gothic" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+  <!-- Bootstrap Core CSS -->
+  <link href="{% static 'chatapp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" -->
+
+  <!-- ARKWITH MAIN CSS -->
+  <link href="{% static 'chatapp/css/arkwith_main.css' %}" rel="stylesheet">
+
+  <script src="{% static 'chatapp/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'chatapp/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  
+  
+    
+  {% block stylesheet %}{% endblock %}
+  <style>
+  </style>
+
+</head>
+<body class="w3-light-grey">
+
+<!-- Page Container -->
+<div class="w3-content w3-margin-top" style="max-width:1400px;">
+  <!-- The Grid -->
+  <div class="w3-row-padding">
+  
+    <!-- Left Column -->
+    <div class="w3-third">
+    
+      <div class="w3-white w3-text-grey w3-card-4">
+        <div class="w3-display-container">
+          <img src="{% static 'chatapp/images/SamuelPark.jpg' %}" style="width:100%" alt="Avatar">
+          <div class="w3-display-bottomleft w3-container w3-text-black">
+            <h3>홍 길 동</h3>
+          </div>
+        </div>
+        <div class="w3-container">
+		  <p></p>
+          <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>업무자동화(RPA) 컨설턴트</p>
+          <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>대한민국, 인천광역시</p>
+          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>arkwith7@gmail.com</p>
+          <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>+82.10.8888.7777</p>
+          <hr>
+
+          <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>보유역량</b></p>
+          <p>딥러닝, 머신라닝 기반 자연어 처리</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
+          </div>
+		  <p></p>
+          <p>빅데이터 분석</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+              <div class="w3-center w3-text-white">80%</div>
+            </div>
+          </div>
+		  <p></p>
+          <p>웹 어플리케이션 구축</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
+          </div>
+		  <p></p>
+          <p>제조업분야 ERP 컨설팅</p>
+          <div class="w3-light-grey w3-round-xlarge w3-small">
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
+          </div>
+          <br>
+
+          <p class="w3-large w3-text-theme"><b><i class="fa fa-globe fa-fw w3-margin-right w3-text-teal"></i>외국어 능력</b></p>
+          <p>영어</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:80%"></div>
+          </div>
+		  <p></p>
+          <p>일본어</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:75%"></div>
+          </div>
+		  <p></p>
+          <p>중국어</p>
+          <div class="w3-light-grey w3-round-xlarge">
+            <div class="w3-round-xlarge w3-teal" style="height:24px;width:70%"></div>
+          </div>
+          <br>
+        </div>
+      </div><br>
+
+    <!-- End Left Column -->
+    </div>
+
+    <!-- Right Column -->
+    <div class="w3-twothird">
+    
+      <div class="w3-container w3-card w3-white w3-margin-bottom">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>경력 사항</h2>
+        <div class="w3-container">
+          <h4 class="w3-opacity"><b>㈜아크위드 / 대표, 프리랜서 개발자</b></h4>
+          <h4 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2016 - <span class="w3-tag w3-teal w3-round">현재</span></h4>
+          <p>예금보험공사 RPA(Robotic Process Automation) 전사 확대 도입(2020.06 ~ 08)</p>
+          <p>삼성전자 RPA 구축 (2019.07 ~ 2020.01) </p>
+          <p>챗봇 및 머신러닝 서비스 개발 (2017.03 ~ 2018.10) </p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h4 class="w3-opacity"><b>에임시스템즈 / 상해법인장</b></h4>
+          <h4 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Sep 2014 - Dec 2015</h4>
+          <p>MES(Manufacturing Execution System)솔루션 사업 개발 (2014.07 ~ 2015.12) </p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h4 class="w3-opacity"><b>삼성에스디에스 / 중국개발센터 / CTO</b></h4>
+          <h4 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 1995 - Sep 2014</h4>
+          <p>삼성화재 애니카 자동차보험 시스템 개발 (2013.05 ~ 2014.08)</p>
+          <p>삼성SDS 중국GDC운영 (2009.07 ~ 2011.05)</p>
+          <p>삼성 그룹웨어 개발/운영 (2003.07 ~ 2009.02) </p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h4 class="w3-opacity"><b>대림산업㈜ 석유회학사업부 / 개발자</b></h4>
+          <h4 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 1991 - Mar 1995</h4>
+          <p>대림산업㈜ 석유회학사업부 정보시스템 개발 / 운영 (1991.07 ~ 1995.03) </p><br>
+        </div>
+      </div>
+
+      <div class="w3-container w3-card w3-white">
+        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>학력 사항</h2>
+        <div class="w3-container">
+          <h4 class="w3-opacity"><b>kaggle.com</b></h4>
+          <h4 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h4>
+          <p>Machine Learning and Artificial Intelligence! All I need to know in one place</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h4 class="w3-opacity"><b>성균관대학교</b></h4>
+          <h4 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>1985 - 1989</h4>
+          <p>공과대학 산업공학과 / 학사</p>
+          <hr>
+        </div>
+        <div class="w3-container">
+          <h4 class="w3-opacity"><b>수원고등학교</b></h4>
+          <h4 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>1982 - 1985</h4>
+          <p>인문계 / 졸업</p><br>
+        </div>
+      </div>
+
+    <!-- End Right Column -->
+    </div>
+    
+  <!-- End Grid -->
+  </div>
+  
+  <!-- End Page Container -->
+</div>
+
+<footer class="w3-container w3-teal w3-center w3-margin-top">
+  <p>Find me on social media.</p>
+  <i class="fa fa-facebook-official w3-hover-opacity"></i>
+  <i class="fa fa-instagram w3-hover-opacity"></i>
+  <i class="fa fa-snapchat w3-hover-opacity"></i>
+  <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+  <i class="fa fa-twitter w3-hover-opacity"></i>
+  <i class="fa fa-linkedin w3-hover-opacity"></i>
+  <p>Powered by Samuel Park</p>
+</footer>
+
+{% block javascript %}{% endblock %}
+
+<script src="{% static 'chatapp/js/contact-form.js' %}"></script>
+
+<!-- Chatting Popup Menu -->
+<a href="" class="btn__trigger btn__trigger--views" id="trigger"><i class="fa fa-comments fa-lg"></i></a>
+<ul class="my-nav my-nav--list">
+  <div id="wrapper-templates">
+    <li class="my-nav__item"> <a href="{% url 'popup_chat_home' %}" class="my-nav__link my-nav__link--template trigger-iframe"><i class="fa fa-comments fa-fw"></i> ChatBot</a> </li>
+    <li class="my-nav__item"> <a href="" class="my-nav__link my-nav__link--template trigger-iframe"><i class="fa fa-comments fa-fw"></i> FAQ</a> </li>
+  </div>
+</ul>
+<div id="modal-iframe" class="iziModal">
+</div>
+<div id="modal-alert" class="iziModal">
+</div>
+<div id="modal-content" class="iziModal" data-iziModal-group="grupo1">
+        <button data-iziModal-close class="icon-close">x</button>
+        <p>두번째 활용 영역은 'Language'다. 인공지능 분야에서 언어에 대한 연구는 꾸준히 이어지고 있는데, 언어 처리 분야 중에서도 저널리즘과 관련 있는 기술은 '자연어 생성'과 '자연어 처리'다. 당연하겠지만, 자동으로 문장을 생성하는 것은 언론에서 매우 유용하게 사용할 수 있는 기술 중 하나다. 'LA Times'는 'LA Quakebot'이라는 서비스를 개발했다. 'LA Quakebot'은 자연어 생성 기술을 활용해 지역에서 지진이 일어난 순간, 이미 작성된 프레임에 맞춰 기사를 작성하며, 완성된 기사는 트위터를 통해 송출한다.</p>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore.</p>
+</div>
+<script src="{% static 'chatapp/vendor/iziModal/js/iziModal.min.js' %}"></script>
+
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+  
+  
+})
+
+
+</script>
+
+
+<script>
+
+<!-- Fullsreen-Sticky-Popup-Menu-With-jQuery-CSS3 - JavaScript -->
+function displayList () {
+  $.fn.reverse = [].reverse;
+  var trigger = $("#trigger"),
+      mainTarget = $(".my-nav"),
+      targetItem = $('.my-nav__item'),
+      html = $("html");
+
+  trigger.on("click", function(event) {
+    mainTarget.toggleClass("reveal unreveal");
+
+    targetItem.reverse().each(function(i, el) {
+      setTimeout(function() {
+      $(el).toggleClass("visible");
+      }, i * 68);
+    })
+
+    html.on("click", function() {
+      targetItem.removeClass("visible");
+      mainTarget.removeClass("reveal");
+    });
+
+    event.preventDefault();
+    event.stopPropagation();
+  });
+}
+// If you are using Turbolinks use only
+//$(document).on('turbolinks:load', displayList);
+
+$(document).on('page:load', displayList);
+$(document).ready(displayList);
+
+
+</script>
+
+<script>
+
+  $("#modal-iframe").iziModal({
+        title: ' ',
+        subtitle: '',
+//        iconClass: 'fa fa-cog',
+//        transitionIn: 'transitionIn',
+//        transitionOut: 'transitionOut',
+//        headerColor: 'rgb(189, 91, 91)',
+zindex: 10000,
+    fullscreen: true,
+openFullscreen: true,
+//iframeHeight: 500,
+//    closeOnEscape: true,
+//    closeButton: true,
+//        width: 1200,
+//        overlayClose: true,
+         iframe : true
+    });
+
+
+    $(document).on('click', '.trigger-iframe', function (event) {
+        event.preventDefault();
+		// $('#modal').iziModal('open', { zindex: 99999 });
+        $("#modal-iframe").iziModal('open', event);
+    });
+	
+$("#modal-alert").iziModal({
+        title: "Your message has been sent successfully",
+        iconClass: 'fa fa-warning',
+        headerColor: '#5bbd72',
+        width: "40%"
+    });
+    $(document).on('click', '.trigger-alert', function (event) {
+        event.preventDefault();
+        $('#modal-alert').iziModal('open');
+    });
+	
+$("#modal-content").iziModal({
+//        title: "Welcome to the iziModal",
+//        subtitle: "Simple, complete and lightweight modal plugin with jquery.",
+//        iconClass: 'icon-stack',
+//    fullscreen: true,
+//        overlayColor: 'rgba(255, 255, 255, 0.4)',
+//        width: 700,
+//        padding: 20
+	  zindex: 10000,
+      overlayClose: false,
+      overlayColor: 'rgba(0, 0, 0, 0.6)'
+    });
+    $(document).on('click', '.trigger-content', function (event) {
+        event.preventDefault();
+        $('#modal-content').iziModal('open');
+    });
+</script>
+
+
+
+</body>
+</html>

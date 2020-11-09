@@ -1,0 +1,577 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>{% block title %}ARKWITH SITE{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery-mistCarousel -->
+  <link href='{% static "chatapp/vendor/mistCarousel/css/mistCarousel.css" %}' rel="stylesheet" type="text/css" >
+
+  <!-- iziModal -->
+  <link href='{% static "chatapp/vendor/iziModal/css/iziModal.min.css" %}' rel="stylesheet">
+
+  <!-- Custom Fonts -->
+  <link href="{% static 'chatapp/vendor/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+
+  <!-- Korean Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Gaegu|Gothic+A1|Hi+Melody|Jua|Nanum+Gothic" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+
+  <!-- Bootstrap Core CSS -->
+  <link href="{% static 'chatapp/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" -->
+
+  <!-- ARKWITH MAIN CSS -->
+  <link href="{% static 'chatapp/css/arkwith_main.css' %}" rel="stylesheet">
+
+  <script src="{% static 'chatapp/vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'chatapp/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+  
+  <!-- jQuery-mistCarousel scripts--> 
+  <script src="{% static 'chatapp/vendor/mistCarousel/js/mistCarousel.js' %}"></script> 
+  <script src="{% static 'chatapp/vendor/mistCarousel/js/main.js' %}"></script>
+  
+    
+  {% block stylesheet %}{% endblock %}
+  <style>
+  </style>
+
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="/">ARKWITH
+        <p style="line-height: 1.5; font-size: 12px; padding-bottom: 3; color: FFFAFA; font-weight: 300;">Seek after difference</p>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#contact">CONTACT</a></li>
+        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">DEMO <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="{% url 'chat_home' %}">Chat Homepage.</a></li>
+            <li><a href="">Chat FAQ.</a></li>
+            <li><a href="">Chat Reservations and Orders.</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- div class="jumbotron text-center" -->
+<div id="page-wrapper">
+{% block content %}{% endblock %}
+</div>
+
+<!-- jQuery-mistCarousel Start -->
+<div class="mist-overlay"></div>
+<div id="mistify">
+    <div class="mistify__slide"><a  class="mistify__slide-content mist-link" href="#intro_chatbot_services" >
+      <p class="mistify__slide-description">홈페이지 방문 고객의 잛고 간결한 질문에 대해 정확하고 핵심적인 답변이 가능한 접점관리 서비스는?</p>
+      <h1 class="mistify__slide-title">정보 전달의 정확성이 확보된 고객 접점관리 챗봇서비스</h1>
+      <p class="mistify__slide-timestamp">01 / 05</p>
+      </a><img class="mistify__slide-background" src="{% static 'chatapp/images/1.jpg' %}" alt="bg"></div>
+    <div class="mistify__slide"><a class="mistify__slide-content mist-link" href="#intro_chatbot_services">
+      <p class="mistify__slide-description">홈페이지의 고객 문의 게시글이나 댓글에 한참만에 대응하는 방식 말고 직접 실시간 질의응답 서비스는?</p>
+      <h1 class="mistify__slide-title">민첩성과 편의성 향상 챗봇서비스</h1>
+      <p class="mistify__slide-timestamp">02 / 05</p>
+      </a><img class="mistify__slide-background" src="{% static 'chatapp/images/2.jpg' %}" alt="bg"></div>
+    <div class="mistify__slide"><a class="mistify__slide-content mist-link" href="#intro_chatbot_services">
+      <p class="mistify__slide-description">고객 인내심 테스트 ARS(Automatic Response System)의 번호 안내 서비스를 대체 할 실시간 정보 확인 서비스는?</p>
+      <h1 class="mistify__slide-title">실시간 정보제공 챗봇서비스</h1>
+      <p class="mistify__slide-timestamp">03 / 05</p>
+      </a><img class="mistify__slide-background" src="{% static 'chatapp/images/3.jpg' %}" alt="bg"></div>
+    <div class="mistify__slide"><a class="mistify__slide-content mist-link" href="#intro_chatbot_services">
+      <p class="mistify__slide-description">상용 메신저(카카오톡과 페이스북, 라인등) 통해서 말고 홈페이지에서도 가능 한가요?</p>
+      <h1 class="mistify__slide-title">홈페이지에서도 가능하며 다양한 채널 지원 챗봇서비스</h1>
+      <p class="mistify__slide-timestamp">04 / 05</p>
+      </a><img class="mistify__slide-background" src="{% static 'chatapp/images/4.jpg' %}" alt="bg"></div>
+    <div class="mistify__slide"><a class="mistify__slide-content mist-link" href="#intro_chatbot_services">
+      <p class="mistify__slide-description">고객의 소리(VOC:Voice of customer)를 수집하여 제품 서비스를 개선 할 수 있나요?</p>
+      <h1 class="mistify__slide-title">고객에게 향상된 경험을 제공하는 빅데이타 분석 및 데이타 마이닝 챗봇서비스</h1>
+      <p class="mistify__slide-timestamp">05 / 05</p>
+      </a><img class="mistify__slide-background" src="{% static 'chatapp/images/5.jpg' %}" alt="bg"></div>
+</div>
+
+<!-- jQuery-mistCarousel end -->
+
+<!-- Container (About Section) -->
+<div id="about" class="container-fluid">
+  <div class="row">
+    <div class="col-sm-8">
+      <h2>회사소개</h2><br>
+      <h4>아크위드는 고객과 거래처와 함께 지금보다 더 좋은 세상을 만들기 위해 노력합니다.</h4><br>
+      <p>2016년 설립하여 연구 개발을 진행 중에 있으며, 주요 내용으로 사람의 판단, 선택 행위의 근간이 되는 지식 인지와 추론을 모방하여 컴퓨터가 지식을 축적, 처리, 활용하도록 하는 온톨로지 기반 지식정보 처리 응용 소프트웨어를 개발 중이고,
+                     또한 사람의 지식정보 전달 및 습득에 중요한 수단인 인간의 언어를 컴퓨터가 이해하고 사람에게 반응 할 수 있도록 하는 자연어 처리와 이해 분야를 연구하며 관련 오픈 소스 응용 어플리케이션을 찾아서 재사용하고 새로운 어플리케이션 서비스로 구현 합니다.</p>
+      <br><button class="btn btn-default btn-lg">Get in Touch</button>
+    </div>
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-signal logo"></span>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-grey">
+  <div class="row">
+    <div class="col-sm-4">
+      <span class="glyphicon glyphicon-globe logo slideanim"></span>
+    </div>
+    <div class="col-sm-8">
+      <h2>Our Values</h2><br>
+      <h4><strong>MISSION:</strong> 
+      	<p style="font-family: 'Nanum Gothic', sans-serif;">
+      	채팅 대화하는 홈페이지,<br> 
+      	채팅 대화 고객 FAQ,<br>
+      	채팅 대화 고객 문의 자동 응답 시스템<br>
+      이상의 서비스를 클라우드 컴퓨팅 서비스와 패키지 기반 구축 서비스로 제공.
+      	</p>
+      	
+      </h4><br>
+      <p><strong>VISION:</strong> 사람의 지적 상상력에 부합하고 창의력을 증진시키는 지능화된 지식 정보서비스 제공자가 되는 것입니다.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Container (Services Section) -->
+<div id="services" class="container-fluid text-center">
+  <h2>서비스 개요</h2>
+  <br>
+  <div class="thumbnail">
+  	<img src="{% static 'chatapp/images/intro_services.png' %}" >
+  </div><br>
+  
+  <h2>주요 서비스 내용</h2>
+  <div class="row slideanim">
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h3>채팅 회사소개</h3>
+        </div>
+        <div class="panel-body">
+          <p>회사의 비전, 미션,</p>
+          <p>주요 제품 서비스, 연락처 등을</p>
+          <p>음성, 문자 채팅으로</p>
+          <p>소개하는</p>
+          <p>클라우드 컴퓨팅 기반</p>
+          <p>음성, 문자 채팅으로</p>
+          <p>서비스 제공.</p>
+        </div>
+        <div class="panel-footer">
+          <button class="btn btn-lg btn-default" onclick="location.href='{% url 'chat_home' %}'">DEMO</button>
+        </div>
+      </div>      
+    </div>     
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h3>채팅 자주하는질문(FAQ)</h3>
+        </div>
+        <div class="panel-body">
+          <p>고객 서비스를 위한 </p>
+          <p>업무지식 기반의 </p>
+          <p>자주하는 질문에 대해</p>
+          <p>음성, 문자 채팅으로</p>
+          <p>챗봇을 통해 답변하는</p>
+          <p>클라우드 컴퓨팅 기반</p>
+          <p>서비스 제공.</p>
+        </div>
+        <div class="panel-footer">
+          <button class="btn btn-lg" onclick="location.href=''">DEMO</button>
+        </div>
+      </div>      
+    </div>       
+    <div class="col-sm-4 col-xs-12">
+      <div class="panel panel-default text-center">
+        <div class="panel-heading">
+          <h3>채팅 예약 주문</h3>
+        </div>
+        <div class="panel-body">
+          <p>항공편, 기차표, 호텔 등 </p>
+          <p>일정과 가격 등을 </p>
+          <p>조회 예약하는 </p>
+          <p>챗봇 서비스를</p>
+          <p>클라우드 컴퓨팅 기반</p>
+          <p>서비스로 제공.</p>
+          <p><br></p>
+        </div>
+        <div class="panel-footer">
+          <button class="btn btn-lg"  onclick="location.href=''">DEMO</button>
+        </div>
+      </div>      
+    </div>    
+  </div><br>
+  
+  <h2>서비스 주요 기술</h2>
+  <div id="myCarousel" class="carousel slide text-center" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <h4>사용자의 편의성을 증대에 필요한 부트스트랩 활용<br><br><span>부트스트랩 은 웹사이트를 쉽게 만들 수 있게 도와주는 HTML, CSS, JS 프레임워크이다.<br> 하나의 CSS 로 휴대폰, 태블릿, 데스크탑까지 다양한 기기에서 작동한다.<br> 다양한 기능을 제공하여 사용자가 쉽게 웹사이트를 제작, 유지, 보수 할 수 있도록 도와준다.</span></h4>
+      </div>
+      <div class="item">
+        <h4>웹 서비스와 다양한 서비스 연계를 위해 Node.js와 Python Django 활용<br><br><span>Node.js는 확장성 있는 네트워크 애플리케이션 개발에 사용되는 소프트웨어 플랫폼이며, <br>Django는 파이썬으로 만들어진 무료 오픈소스 웹 애플리케이션 프레임워크(web application framework)로 <br>쉽고 빠르게 웹사이트를 개발할 수 있도록 하는 다양한 구성요소로 이루어진 웹 프레임워크이다.</span></h4>
+      </div>
+      <div class="item">
+        <h4>빅데이터 분석, 자연어 처리, 머신러닝, 딥러닝을 위한 Tensorflow<br><br><span>파이썬은 고급 프로그래밍 언어로, 플랫폼 독립적이며 인터프리터식, 객체지향적, 동적 타이핑 대화형 언어이며, <br>파이썬 기반 텐서플로우(tensorflow), 사이킷런(scikit-learn)과 같은 훌륭한 머신러닝 라이브러리를 활용, <br>빅데이터 분석, 자연어 이해, 처리 등 복잡하고 난해한 작업들을 쉽게 처리 할 있게 해준다.</span></h4>
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  
+</div>
+
+<!-- Container (Introducing Arkwith Chatbot Service) -->
+<div id="intro_chatbot_services" class="container-fluid">
+      <h2>아크위드 챗봇</h2><br>
+      <h4>서비스 소개</h4>
+      <p>일반적으로 사람들이 기대하는 챗봇은 사람이 아무 말이나 걸면 거기에 부합하는 대답을 하기를 기대한다. 이러한 대화 방식을 사람 주도의 열린 대화라고 하며 대표적인 사례로 마이크로소프트의 죠(Zo)가 있다. 그러나 상용 비즈니스에는 이러한 방식이 적용되기 어렵다. 대부분의 기업은 비즈니스 목적상 대답 해야 할 답이 미리 준비 되어 있고 답변을 잘하기 위해  질문에 대한 이해도를 높이는 방법에 대해 많은 관심을 가지고 있다. 아크위드 챗봇은 이와 같은 요구에 부응하여 특정 영역의 대화 서비스를 위해 질문을 잘 이해하고 정확한 답변을 제공하기 위하여 시스템 주도의 닫힌대화 방식의 챗봇 서비스를 제공한다. </p>
+	  <br>
+      <h4>서비스 방법 및 절차</h4>
+      <p>아크위드 챗봇 서비스는 다음과 같은 예시적인 절차로 진행 됩니다</p>
+		<div class="timeline">
+		  <div class="timeline_container tc_left">
+		    <div class="timeline_content">
+		      <h4>서비스 준비-서비스요청자(고객)</h4>
+		      <p>대화자료 준비</p>
+				<ul>
+				  <li>대화의도(대화분류)</li>
+				  <li>질문과 답변의 말뭉치</li>
+				  <li>홈페이지 기술환경 정의서</li>
+				</ul>  
+		      <p>챗봇 서비스 문의 및 요청</p>
+		
+		    </div>
+		  </div>
+		  <div class="timeline_container tc_right">
+		    <div class="timeline_content">
+		      <h4>서비스 준비-서비스제공자(아크위드)</h4>
+		      <p>서비스 요청사항 검토 및 의견제시</p>
+		    </div>
+		  </div>
+		  <div class="timeline_container tc_right">
+		    <div class="timeline_content">
+		      <h4>서비스 구축-서비스제공자(아크위드)</h4>
+		      <p>대화자료 처리 및 개발</p>
+				<ul>
+				  <li>대화자료 자연어처리/머신러닝</li>
+				  <li>챗봇 클라이언트 개발</li>
+				  <li>클라우드 챗봇 서버 개발</li>
+				  <li>단위/통합 테스트</li>
+				  <li>서비스 준비</li>
+				</ul>  
+		    </div>
+		  </div>
+		  <div class="timeline_container tc_left">
+		    <div class="timeline_content">
+		      <h4>서비스 구축-서비스요청자(고객)</h4>
+		      <p>사용자/시스템 테스트</p>
+		    </div>
+		  </div>
+		  <div class="timeline_container tc_right">
+		    <div class="timeline_content">
+		      <h4>서비스 구축-서비스제공자(아크위드)</h4>
+		      <p>테스트결과반영/서비스 오픈 준비</p>
+		    </div>
+		  </div>
+		  <div class="timeline_container tc_left">
+		    <div class="timeline_content">
+		      <h4>서비스 실시-서비스요청자(고객)</h4>
+		      <p>서비스 오픈</p>
+				<ul>
+				  <li>사용자 반응 모니터링</li>
+				  <li>고객의 소리 분석 모니터링</li>
+				</ul>  
+		    </div>
+		  </div>
+		  <div class="timeline_container tc_right">
+		    <div class="timeline_content">
+		      <h4>서비스 실시-서비스제공자(아크위드)</h4>
+		      <p>챗봇 서비스 유지보수</p>
+		    </div>
+		  </div>
+		</div>
+	  
+	  <br>
+      <h4>기대효과</h4>
+      <p></p>
+	  <ol>
+	    <li>고객의 제품 서비스에 대한 정보요구에 편의성 및 민첩성 제공</li>
+	    <li>제품 서비스에 대한 고객 사용자 경험 향상</li>
+	    <li>고객의 소리 빅데이터 분석/데이터 마이닝 기반 구축</li>
+	  </ol> 
+<div>
+
+<!-- Container (Contact Section) -->
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center">CONTACT</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Incheon, Republic of Korea</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +82 7041932827</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> arkwith7@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+<form id="contactForm" role="form" action="" method="POST">
+    {% csrf_token %}
+         <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" name="name" size="36" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="email" size="36" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control byteLimit" id="message" name="comments" placeholder="Message" rows="5" limitbyte="350"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <div id="msgSubmit" class="h4 hidden pull-left"></div>
+          <button class="btn btn-default pull-right" type="submit">Submit</button>
+        </div>
+      </div>
+</form>
+    </div>
+  </div>
+</div>
+
+
+<footer class="container-fluid text-center">
+  <a href="#myPage" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+         <div class="inner-wrap">
+            
+			<div class="footer-widgets-wrapper">
+			   <div class="footer-widgets-area clearfix">
+				  <div class="footer-box tg-one-fourth tg-column-odd">
+					 <section id="text-2" class="widget widget_text">
+						<div class="textwidget">
+							<div class="col-sm-6">
+									<p>In him the whole building is joined together and rises to become
+									a holy temple in the Lord. And in him you too are being built together
+									to become a dwelling in which God lives by his Spirit.<br>(Ephesians 2:21-22)</p>
+
+							</div>
+						</div>
+					</section>
+				</div>
+			    <div class="footer-box tg-one-fourth tg-column-even">
+                </div>
+			    <div class="footer-box tg-one-fourth tg-after-two-blocks-clearfix tg-column-odd">
+				  <section id="text-3" class="widget widget_text">
+					 <div class="textwidget">
+					  <div class="col-lg-6 col-md-6 col-sm-6">
+		               <div class="copyright-info">
+		                  <div class="copyright">Copyright &copy; 2018 <a href="https://www.arkwith.com/" title="ARKWITH" ><span>ARKWITH.COM</span></a>
+						  </div>
+					   </div>
+                      </div>
+					 </div>
+				  </section>
+                </div>
+				<div class="footer-box tg-one-fourth tg-one-fourth-last tg-column-even">
+               </div>
+              </div>
+            </div>
+         </div> 
+  
+
+</footer>
+
+{% block javascript %}{% endblock %}
+
+<script src="{% static 'chatapp/js/contact-form.js' %}"></script>
+
+<!-- Chatting Popup Menu -->
+<a href="" class="btn__trigger btn__trigger--views" id="trigger"><i class="fa fa-comments fa-lg"></i></a>
+<ul class="my-nav my-nav--list">
+  <div id="wrapper-templates">
+    <li class="my-nav__item"> <a href="{% url 'popup_chat_home' %}" class="my-nav__link my-nav__link--template trigger-iframe"><i class="fa fa-comments fa-fw"></i> Home</a> </li>
+    <li class="my-nav__item"> <a href="" class="my-nav__link my-nav__link--template trigger-iframe"><i class="fa fa-comments fa-fw"></i> FAQ</a> </li>
+    <li class="my-nav__item"> <a href="" a class="my-nav__link my-nav__link--template  trigger-iframe" ><i class="fa fa-comments fa-fw"></i> Conversation</a> </li>
+	<!-- iShift 추가 -->
+    <li class="my-nav__item"> <a href="" a class="my-nav__link my-nav__link--template  trigger-iframe" ><i class="fa fa-comments fa-fw"></i> iShift Home</a> </li>
+  </div>
+</ul>
+<div id="modal-iframe" class="iziModal">
+</div>
+<div id="modal-alert" class="iziModal">
+</div>
+<div id="modal-content" class="iziModal" data-iziModal-group="grupo1">
+        <button data-iziModal-close class="icon-close">x</button>
+        <p>두번째 활용 영역은 'Language'다. 인공지능 분야에서 언어에 대한 연구는 꾸준히 이어지고 있는데, 언어 처리 분야 중에서도 저널리즘과 관련 있는 기술은 '자연어 생성'과 '자연어 처리'다. 당연하겠지만, 자동으로 문장을 생성하는 것은 언론에서 매우 유용하게 사용할 수 있는 기술 중 하나다. 'LA Times'는 'LA Quakebot'이라는 서비스를 개발했다. 'LA Quakebot'은 자연어 생성 기술을 활용해 지역에서 지진이 일어난 순간, 이미 작성된 프레임에 맞춰 기사를 작성하며, 완성된 기사는 트위터를 통해 송출한다.</p>
+        <hr>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore. Dolorum perferendis, non nisi quisquam animi iusto, officiis eligendi eos, fugit, dolore corporis provident accusantium. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ea ad aspernatur, temporibus iusto cum autem repudiandae, delectus non voluptas corporis facere cumque! Qui accusantium ratione eum eligendi maiores velit ea porro voluptatibus architecto dolore.</p>
+</div>
+<script src="{% static 'chatapp/vendor/iziModal/js/iziModal.min.js' %}"></script>
+
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+  
+  
+})
+
+
+</script>
+
+
+<script>
+
+<!-- Fullsreen-Sticky-Popup-Menu-With-jQuery-CSS3 - JavaScript -->
+function displayList () {
+  $.fn.reverse = [].reverse;
+  var trigger = $("#trigger"),
+      mainTarget = $(".my-nav"),
+      targetItem = $('.my-nav__item'),
+      html = $("html");
+
+  trigger.on("click", function(event) {
+    mainTarget.toggleClass("reveal unreveal");
+
+    targetItem.reverse().each(function(i, el) {
+      setTimeout(function() {
+      $(el).toggleClass("visible");
+      }, i * 68);
+    })
+
+    html.on("click", function() {
+      targetItem.removeClass("visible");
+      mainTarget.removeClass("reveal");
+    });
+
+    event.preventDefault();
+    event.stopPropagation();
+  });
+}
+// If you are using Turbolinks use only
+//$(document).on('turbolinks:load', displayList);
+
+$(document).on('page:load', displayList);
+$(document).ready(displayList);
+
+
+</script>
+
+<script>
+
+  $("#modal-iframe").iziModal({
+        title: ' ',
+        subtitle: '',
+//        iconClass: 'fa fa-cog',
+//        transitionIn: 'transitionIn',
+//        transitionOut: 'transitionOut',
+//        headerColor: 'rgb(189, 91, 91)',
+zindex: 10000,
+    fullscreen: true,
+openFullscreen: true,
+//iframeHeight: 500,
+//    closeOnEscape: true,
+//    closeButton: true,
+//        width: 1200,
+//        overlayClose: true,
+         iframe : true
+    });
+
+
+    $(document).on('click', '.trigger-iframe', function (event) {
+        event.preventDefault();
+		// $('#modal').iziModal('open', { zindex: 99999 });
+        $("#modal-iframe").iziModal('open', event);
+    });
+	
+$("#modal-alert").iziModal({
+        title: "Your message has been sent successfully",
+        iconClass: 'fa fa-warning',
+        headerColor: '#5bbd72',
+        width: "40%"
+    });
+    $(document).on('click', '.trigger-alert', function (event) {
+        event.preventDefault();
+        $('#modal-alert').iziModal('open');
+    });
+	
+$("#modal-content").iziModal({
+//        title: "Welcome to the iziModal",
+//        subtitle: "Simple, complete and lightweight modal plugin with jquery.",
+//        iconClass: 'icon-stack',
+//    fullscreen: true,
+//        overlayColor: 'rgba(255, 255, 255, 0.4)',
+//        width: 700,
+//        padding: 20
+	  zindex: 10000,
+      overlayClose: false,
+      overlayColor: 'rgba(0, 0, 0, 0.6)'
+    });
+    $(document).on('click', '.trigger-content', function (event) {
+        event.preventDefault();
+        $('#modal-content').iziModal('open');
+    });
+</script>
+
+
+
+</body>
+</html>

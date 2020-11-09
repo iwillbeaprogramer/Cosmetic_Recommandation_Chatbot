@@ -1,0 +1,455 @@
+/*!
+ * arkwith.com main css
+ * Copyright 2018 arkwith.com
+ * Licensed under MIT 
+ */
+
+/* 오렌지 계열   색상 : #f4511e */
+/* 보라색 계열   색상 : #673ab7 */
+/*
+   p { font-size: 24px; }
+  .ga { font-family: 'Gaegu', cursive; }
+  .hi { font-family: 'Hi Melody', cursive; }
+  .ju { font-family: 'Jua', sans-serif; }
+  .go { font-family: 'Gothic A1', sans-serif; }
+  .na { font-family: 'Nanum Gothic', sans-serif;
+*/
+ 
+  body {
+      font: 400 15px Lato, sans-serif;
+      line-height: 1.8;
+      color: #818181;
+  }
+  h2 {
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #303030;
+      font-weight: 600;
+      margin-bottom: 30px;
+  }
+  h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      color: #303030;
+      font-weight: 400;
+      margin-bottom: 30px;
+  }  
+  .jumbotron {
+      background-color: #673ab7;
+      color: #fff;
+      padding: 100px 25px;
+      font-family: Montserrat, sans-serif;
+  }
+  .container-fluid {
+      padding: 60px 50px;
+  }
+  .bg-grey {
+      background-color: #f6f6f6;
+  }
+  .logo-small {
+      color: #673ab7;
+      font-size: 50px;
+  }
+  .logo {
+      color: #673ab7;
+      font-size: 200px;
+  }
+  .thumbnail {
+      padding: 0 0 15px 0;
+      border: none;
+      border-radius: 0;
+  }
+  .thumbnail img {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 10px;
+  }
+  .carousel-control.right, .carousel-control.left {
+      background-image: none;
+      color: #673ab7;
+  }
+  .carousel-indicators li {
+      border-color: #673ab7;
+  }
+  .carousel-indicators li.active {
+      background-color: #673ab7;
+  }
+  .item h4 {
+      font-size: 19px;
+      line-height: 1.375em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 70px 0;
+  }
+  .item span {
+      font-style: normal;
+      font-size: 14px;
+  }
+ /*----*/
+	 .chat {
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+	.chat li {
+	  margin-bottom: 10px;
+	  padding-bottom: 5px;
+	  border-bottom: 1px dotted #999999;
+	}
+	.chat li.left .chat-body {
+	  margin-left: 60px;
+	}
+	.chat li.right .chat-body {
+	  margin-right: 60px;
+	}
+	.chat li .chat-body p {
+	  margin: 0;
+	}
+	.chat-panel .panel-body {
+	  height: 350px;
+	  overflow-y: scroll;
+	}
+ /*----*/
+  .panel {
+      border: 1px solid #673ab7; 
+      border-radius:0 !important;
+      transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+      box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+      border: 1px solid #673ab7;
+      background-color: #fff !important;
+      color: #673ab7;
+  }
+  .panel-heading {
+      color: #fff !important;
+      background-color: #673ab7 !important;
+      padding: 10px;
+      border-bottom: 1px solid transparent;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+      background-color: white !important;
+  }
+  .panel-footer h3 {
+      font-size: 32px;
+  }
+  .panel-footer h4 {
+      color: #aaa;
+      font-size: 14px;
+  }
+ 
+  .panel-footer .btn {
+/* 버튼 좌우정열이 안되는 원인 제공으로 코멘트 처리
+      margin: 15px 0;
+*/
+      background-color: #673ab7;
+      color: #fff;
+  }
+
+  .navbar {
+      margin-bottom: 0;
+      background-color: #673ab7;
+      /* popup 전체화면을 사용시 z-index 9999보다 큰값 설정 필요*/
+      z-index: 9999;
+      border: 0;
+      font-size: 12px !important;
+      line-height: 1.42857143 !important;
+      letter-spacing: 4px;
+      border-radius: 0;
+      font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+      color: #fff !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+      color: #673ab7 !important;
+      background-color: #fff !important;
+  }
+  .navbar-default .navbar-toggle {
+      border-color: transparent;
+      color: #fff !important;
+  }
+  footer .glyphicon {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: #673ab7;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+      animation-name: slide;
+      -webkit-animation-name: slide;
+      animation-duration: 1s;
+      -webkit-animation-duration: 1s;
+      visibility: visible;
+  }
+  
+/*
+
+*/
+
+
+.btn__trigger {
+  transition: box-shadow 300ms ease-in-out;
+  position: fixed;
+  z-index: 10;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  display: block;
+  border-radius: 50px;
+}
+
+.btn__trigger--views {
+  width: 5rem;
+  height: 5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #673ab7;
+  color: #fff;
+  font-size: 1.6rem;
+  line-height: 3;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.btn__trigger--views:hover { box-shadow: 0 14px 10px rgba(0, 0, 0, 0.24), 0 10px 10px rgba(0, 0, 0, 0.24); }
+
+.my-nav {
+  position: fixed;
+  opacity: 0;
+}
+
+.my-nav.reveal {
+  visibility: visible;
+  opacity: 1;
+}
+
+.my-nav.reveal:after {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  display: block;
+  content: "";
+  background-color: rgba(42, 196, 159, 0.7);
+}
+
+.my-nav--list {
+  visibility: hidden;
+  bottom: 6.5rem;
+  right: 1.75rem;
+  text-align: right;
+}
+
+.my-nav__item {
+  transition: opacity 150ms ease-in-out;
+  display: block;
+  font-size: 0.90rem;
+  opacity: 0;
+}
+
+.my-nav__item.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.my-nav__link {
+  transition: background-color 150ms ease-in-out;
+  display: inline-block;
+  width: auto;
+  margin: 1rem 0;
+  padding: 0.25rem 0.5rem;
+  box-shadow: inset 0 0 0 1px #fff;
+  border-radius: 25px;
+  color: #fff;
+}
+
+.my-nav__link--template:hover {
+  background-color: #ffc946;
+  color: #fff;
+}
+
+.my-nav__link--new {
+  transition: box-shadow 300ms ease-in-out;
+  border-radius: 3px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  background-color: #87c442;
+  color: #fff;
+}
+
+.my-nav__link--new:hover { box-shadow: 0 14px 10px rgba(0, 0, 0, 0.24), 0 10px 10px rgba(0, 0, 0, 0.24); }
+
+.my-nav__link:last-child { margin-bottom: 0; }
+
+/* 타임라인 */  
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: #474e5d;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.timeline_container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: #D8D8D8;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* The circles on the timeline */
+.timeline_container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.tc_left {
+    left: 0;
+}
+
+/* Place the container to the right */
+.tc_right {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.tc_left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.tc_right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.tc_right::after {
+    left: -16px;
+}
+
+/* The actual content */
+.timeline_content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  /* Place the timelime to the left */
+  .timeline::after {
+    left: 31px;
+  }
+  
+  /* Full-width containers */
+  .timeline_container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  
+  /* Make sure that all arrows are pointing leftwards */
+  .timeline_container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  /* Make sure all circles are at the same spot */
+  .tc_left::after, .tc_right::after {
+    left: 15px;
+  }
+  
+  /* Make all right containers behave like the left ones */
+  .tc_right {
+    left: 0%;
+  }
+}
+
+/*
+
+*/  
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+        width: 100%;
+        margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+        font-size: 150px;
+    }
+  }

@@ -1,0 +1,149 @@
+{% extends "chatapp/base_contents_kr.html" %}
+{% load staticfiles %}
+
+{% block title %}Chatting HOME Page {% endblock %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+    			<form id="frmChat" action="#" >{% csrf_token %} <!-- start FORM -->
+                    <!-- /.panel -->
+                    <div class="chat-panel panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-comments fa-fw"></i> Chat
+                            <div class="btn-group pull-right">
+                                <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-chevron-down"></i>
+                                </button>
+                                <ul class="dropdown-menu slidedown">
+                                    <li>
+                                        <a data-toggle="modal" href="#resumeConversation">
+                                            <i class="fa fa-refresh fa-fw"></i> Restart
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a data-toggle="modal" href="#settingENV">
+                                            <i class="fa fa-cog fa-fw"></i> Settings
+                                        </a>
+                                    </li>
+                                    <li>
+                                    </li>
+                                    <li>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+							<!-----display conversation----->
+                            <ul class="chat" id="responseHolder">
+                            </ul>
+                        </div>
+                        <!-- /.panel-body -->
+                        <div class="panel-footer">
+                            <div class="input-group">
+								<!-----display inform for Speech Recognition----->
+				  				<div id="info">
+				  				</div>
+                            </div> <!-- /.input-group -->
+                            <div class="input-group">
+                      			<!-- 사용자 ID -->
+     							<input type="hidden" id="txtUser" name="user" size="10" value="Person"/>
+     							<input type="hidden" name="send"/>
+                                <span class="input-group-btn">
+				    	  			<button class="btn btn-sm" id="btnMicrophone" type="button" value="microphone" onclick="microphoneClick(event)" data-toggle="tooltip" data-placement="bottom" title="음성채팅" >
+				    	  			<i class="fa fa-microphone fa-fw" id="start_img" ></i></button> 
+                                </span>
+     							<!-- 전송 Message -->
+     							<input type="text" name="message" id="txtMessage" class="form-control input-sm" placeholder="Type your message here..." />
+                                <span class="input-group-btn">
+									<input class="btn btn-sm btn-default" type="submit" name="send" value="Send" id="send" />
+                                </span>
+                            </div> <!-- /.input-group -->
+				      <!-----Added this section for Speech Recognition--------------------------------------------------->
+                            <div class="input-group">
+		        				<div id="results">
+			          				<span id="final_span" class="final"></span>
+			          				<span id="interim_span" class="interim"></span><p>
+		        				</div>
+                            </div>
+                        </div>
+                        <!-- /.panel-footer -->
+                    </div>
+                    <!-- /.panel .chat-panel -->
+    			</form> <!-- end FORM -->
+
+<!-- Modal -->
+<div class="modal fade bs-example-modal-sm" id="resumeConversation" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Restart</h4>
+      </div>
+      <div class="modal-body">
+        Restarting will delete all conversations.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="restart_chatbot();return false;">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bs-example-modal-sm" id="settingENV" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Settings</h4>
+      </div>
+      <div class="modal-body">
+		<div class="checkbox">
+		    <!------These checkboxes placed outside of the frmChat so they are not serialized and sent to the Chatscript server.------->
+			<label>
+			  <input type="checkbox" name="autosend" value="checked" checked onclick="if (this.checked) {cbAutoSend = this.value} else { cbAutoSend = '' }">
+              <i class="fa fa-microphone fa-fw"></i> Speech Auto Send
+			</label>
+			<label>
+			  <input type="checkbox" name="TTSnabled" value="checked" checked onclick="if (this.checked) {cbTTSEnabled = this.value} else { cbTTSEnabled = '' }">
+              <i class="fa fa-volume-up fa-fw"></i> Text-to-Speech
+			</label>
+		</div> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onClick="return false;">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -->	
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+    	<!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+
+
+{% endblock content %}
+
+
+{% block javascript %}
+    <!-- Speech To Text, Text To Speech, Ajax통신 -->
+	<script type="text/javascript" src="{% static 'chatapp/js/uiForChattingClient.js' %}"></script>
+
+     {% if initMessages %}
+			<script type="text/javascript">
+			botName = "arkwith chatbot"
+			{% for message in initMessages %}
+				processResponse("{{ message }}")
+			{% endfor %}
+			</script>
+     {% endif %}
+{% endblock javascript %}
+
+   
+        

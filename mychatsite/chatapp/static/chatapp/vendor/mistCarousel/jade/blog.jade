@@ -1,0 +1,51 @@
+doctype html
+html
+
+	// head
+	include ./include/head.jade
+
+	// body
+	body.overlay-wrapped
+		.mist-overlay
+		section.main-section
+			.inner-page
+				.inner-page__cover(style="background-image:url('img/5.jpg');")
+					.inner-page__title
+						h1 Hallo, mein Name ist Ralf. Ich bin Coach für herausfordernde Lebensumstände. Sind Sie in einer und stimmen den Aussagen unten zu?
+						p Hello Everyone
+				.inner-page__content
+
+					.content-wrap
+						.inner-page__meta July 25, 2015 -- 
+							a(href="#") Author
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla feugiat venenatis velit, vitae faucibus dui fringilla ac. Duis in molestie risus. Cras iaculis elementum mi sit amet tristique. Nunc aliquet semper nunc sed condimentum. Duis in porta lacus, in convallis tortor. Sed vitae augue leo. Nam sed rutrum lacus, sit amet bibendum turpis. Donec eget metus lacus. Praesent rutrum commodo ipsum ac dictum. Fusce consequat ullamcorper nunc ut venenatis. In convallis lacus ac nisl auctor eleifend. Nulla sapien felis, tristique vel est eu, vehicula porttitor ipsum. Fusce pretium sit amet augue ut semper.
+						p Integer volutpat semper justo at venenatis. Donec elementum felis id lorem consectetur tincidunt. Ut fermentum nibh velit, et convallis felis imperdiet sed. Ut pharetra magna gravida massa aliquam sagittis. Donec eget nisl non lorem pulvinar finibus in at erat. Duis non neque tortor. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi viverra, elit ac convallis vehicula, nunc augue vulputate lectus, ut dictum neque tellus non nibh. Fusce ex ex, consectetur sed laoreet nec, laoreet sit amet ipsum. Donec blandit velit nulla, ac hendrerit metus sodales nec. Integer ante massa, luctus sed mauris sit amet, auctor mattis lacus. Vivamus feugiat ut urna et ultrices. Morbi vitae rhoncus nibh. Nullam varius vulputate tortor ut semper. Mauris rutrum malesuada nulla, nec ultricies felis tempor nec.
+						p Nam consectetur tortor et nisl lobortis porttitor. Etiam pretium vel eros sed varius. Suspendisse laoreet sollicitudin tortor. Fusce eget nulla augue. Donec sagittis nunc in velit porta vehicula. Mauris nunc ligula, maximus sed consequat vitae, tempus ut ipsum. Etiam rutrum vel ex at sollicitudin.
+
+					a(href="/mistcarousel/page.html").inner-page__prev-post.mist-link
+						span Prev post
+						.prev-post__title "Die" Realität gibt es nicht.
+						.prev-post__cover(style="background-image:url('img/8.jpg')")
+
+					a(href="/mistcarousel/page.html").inner-page__next-post.mist-link
+						span Next post
+						.next-post__title Lieber Philosophie als esoterisches Geschwafel.
+						.next-post__cover(style="background-image:url('img/6.jpg')")
+
+				.inner-page__footer
+					a(href="#").scroll-top.fa.fa-chevron-up
+					.inner-page__footer-links
+						li
+							a(href="#")
+								i(class="fa fa-twitter" aria-hidden="true")
+						li
+							a(href="#")
+								i(class="fa fa-dribbble" aria-hidden="true")
+						li
+							a(href="#")
+								i(class="fa fa-paper-plane-o" aria-hidden="true")
+
+			include ./include/menu.jade
+
+	// scripts
+	include ./include/scripts.jade

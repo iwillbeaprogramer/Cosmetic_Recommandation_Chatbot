@@ -1,0 +1,61 @@
+{% extends "chatapp/base_popup_contents_kr.html" %}
+{% load staticfiles %}
+
+{% block title %}Chatting HOME Page {% endblock %}
+
+{% block content %}
+
+    {% include "chatapp/chat-panel.html" %}
+
+{% endblock content %}
+
+
+{% block javascript %}
+
+  <script>
+  $( function() {
+    var availableTags = [
+      "안녕하세요",
+      "안녕히 계셔요.",
+      "감사합니다",
+      "비젼은 무엇입니까?",
+      "사업 목적이 무엇입니까?",
+      "뭐하는 회사인가요?",
+      "어떤 사업 입니까?",
+      "비전이 어떻게 되요?",
+      "미션이 무엇입니까?",
+      "주요 사업 내용은?",
+      "언제 설립되었나요?",
+      "제품 서비스 구입?",
+      "연락처",
+      "견적은",
+      "주 사용자층은?",
+      "고객은",
+      "어떤 제품 인가요?",
+      "어떤 서비스가 있나요?",
+      "구체적인 기술은?",
+      "보유기술",
+      "vision",
+      "mission"
+    ];
+    $( "#txtMessage" ).autocomplete({
+      source: availableTags
+    });
+  } );
+  </script>
+
+    <!-- Speech To Text, Text To Speech, Ajax통신 -->
+	<script type="text/javascript" src="{% static 'chatapp/js/uiForChattingClient.js' %}"></script>
+
+     {% if initMessages %}
+			<script type="text/javascript">
+			botName = "arkwith chatbot"
+			{% for message in initMessages %}
+				processResponse("{{ message }}")
+			{% endfor %}
+			</script>
+     {% endif %}
+{% endblock javascript %}
+
+   
+        

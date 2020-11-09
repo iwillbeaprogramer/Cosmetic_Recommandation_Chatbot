@@ -1,0 +1,67 @@
+--- price query with short answers as dialogue moves
+*
+S> Hello.
+U> Ask("?x.price(x)")
+S> How do you want to travel?
+U> Answer("how(plane)")
+S> Where do you want to go?
+U> Answer("london")
+S> From where are you leaving?
+U> Answer("paris")
+S> When do you want to leave?
+U> Answer("today")
+S> First or second class?
+U> Answer("first")
+S> Do you want a return ticket?
+U> Answer("yes")
+S> When do you want to return?
+U> Answer("tomorrow")
+S> The price is 345.
+*
+
+--- price query with short answers as text
+*
+S> Hello.
+U> price
+S> How do you want to travel?
+U> plane
+S> Where do you want to go?
+U> london
+S> From where are you leaving?
+U> paris
+S> When do you want to leave?
+U> today
+S> First or second class?
+U> first
+S> Do you want a return ticket?
+U> yes
+S> When do you want to return?
+U> tomorrow
+S> The price is 345.
+*
+
+--- negative understanding of user input
+*
+S> Hello.
+U> sdf sdfsdfsdf
+S> I heard you say sdf sdfsdfsdf. I don't understand.
+U> price
+S> How do you want to travel?
+U> dfg dfgdfgdfg
+S> I heard you say dfg dfgdfgdfg. I don't understand. How do you want to travel?
+U>
+S> How do you want to travel?
+*
+
+--- empty user utterances
+*
+S> Hello.
+U>
+U>
+U> Ask("?x.price(x)")
+S> How do you want to travel?
+U>
+S> How do you want to travel?
+U> Answer("how(plane)")
+S> Where do you want to go?
+*

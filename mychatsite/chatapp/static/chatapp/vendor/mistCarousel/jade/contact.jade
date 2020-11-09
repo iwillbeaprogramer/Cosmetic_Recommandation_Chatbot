@@ -1,0 +1,31 @@
+doctype html
+html
+
+	// head
+	include ./include/head.jade
+
+	// body
+	body.overlay-wrapped.contact-page
+		.mist-overlay
+		section.main-section
+			.contact-page__inner
+				.contact-page__title Contact
+				.contact-page__content
+					form.contact-form
+						.form-element
+							input(type="text" placeholder="Name" required)#contact-name
+							label(for="contact-name") Name
+						.form-element
+							input(type="email" placeholder="Email" required)#contact-email
+							label(for="contact-email") Email
+						.form-element
+							textarea(rows="6" placeholder="Text" required)#contact-text
+							label(for="contact-text") Text
+						.form-element
+							button(type="submit")
+								| SUBMIT
+								span.fa.fa-angle-right
+			include ./include/menu.jade
+
+	// scripts
+	include ./include/scripts.jade

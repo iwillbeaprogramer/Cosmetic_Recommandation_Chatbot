@@ -1,0 +1,2 @@
+model_checkpoint_path: "/mnt/d/NLP_MachineLearnning/text-mining-camp/note/arkwith/Contextual_Chatbots/model.tflearn"
+all_model_checkpoint_paths: "/mnt/d/NLP_MachineLearnning/text-mining-camp/note/arkwith/Contextual_Chatbots/model.tflearn"
