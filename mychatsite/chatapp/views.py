@@ -229,6 +229,7 @@ def make_x_train(result1):
 def load_from_dataset(string):
     # INPUT : string은 csv 파일 이름
     import pandas as pd
+    #df = pd.read_csv('C:/Users/kimsuhyun/Dropbox/Cosmetic_Recommandation_Chatbot/mychatsite/chatapp/model/'+string,encoding='utf-8')
     df = pd.read_csv('C:/Users/Administrator/Dropbox/Cosmetic_Recommandation_Chatbot/mychatsite/chatapp/model/'+string,encoding='utf-8')
     y_data = df.values[:,1]
     x_data = df.values[:,-1]
@@ -245,6 +246,7 @@ def load_model_hdf5(filename):
     # INPUT : 1000001000100010001.csv
     # hdf파일 읽어옴
     from tensorflow import keras
+    #loaded_model = keras.models.load_model("C:/Users/kimsuhyun/Dropbox/Cosmetic_Recommandation_Chatbot/mychatsite/chatapp/model/"+filename)
     loaded_model = keras.models.load_model("C:/Users/Administrator/Dropbox/Cosmetic_Recommandation_Chatbot/mychatsite/chatapp/model/"+filename)
     # load한 모델을 리턴
     return loaded_model
@@ -259,6 +261,7 @@ def predict_code_value(category_name,input_value):
     model = load_model_hdf5(categoryno+'.hdf5')
     x,y=load_from_dataset(categoryno+'.csv')
     df = pd.read_csv("C:/Users/Administrator/Dropbox/Cosmetic_Recommandation_Chatbot/mychatsite/chatapp/model/"+categoryno+'.csv',encoding='utf-8')
+    #df = pd.read_csv("C:/Users/kimsuhyun/Dropbox/Cosmetic_Recommandation_Chatbot/mychatsite/chatapp/model/"+categoryno+'.csv',encoding='utf-8')
     code = y[model.predict_classes(b)]
     url = 'https://www.oliveyoung.co.kr/store/goods/getGoodsDetail.do?goodsNo={}&dispCatNo={}'.format(code[0],categoryno)
     #          'A000000103112'
